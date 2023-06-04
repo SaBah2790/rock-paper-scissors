@@ -12,7 +12,11 @@ function playGame(playerSelection, computerSelection) {
     playerSelection.slice(1).toLowerCase();
 
   return (
-    playersPick + " " + computerSelection + " " + "Rock beats paper, you lose!"
+    playersPick +
+    " " +
+    computerSelection +
+    " " +
+    `Rock beats ${computerSelection}`
   );
 }
 const playerSelection = "rock";
