@@ -7,44 +7,40 @@ function getComputerChoice() {
 }
 //pick an option from the three and play against the computer
 
-function playGame(playerSelection, computerSelection) {
-  playerSelection = prompt("So what will it be? Rock, paper or scissors?");
+function playGame() {
+  let playerSelection = window.prompt(
+    "So what will it be? Rock, paper or scissors?"
+  );
+  let computerSelection = getComputerChoice();
   let playersPick =
     playerSelection.charAt(0).toUpperCase() +
     playerSelection.slice(1).toLowerCase();
+  let computerPick =
+    computerSelection.charAt(0).toUpperCase() +
+    computerSelection.slice(1).toLowerCase();
+  console.log("The player chose:", playersPick);
+  console.log("The computer chose:", computerPick);
 
-  return (
-    `You choose ${playersPick}` +
-    " " +
-    `The computer chose ${computerSelection}`
-  );
+  return game(playersPick, computerPick);
 }
-const playerSelection = "paper";
-computerSelection = getComputerChoice();
-console.log(playGame(playerSelection, computerSelection));
 
 //set-up the result with winning and losing combinations
 //declare winner
-function game() {
+function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie! Try again!";
-  }
-  if (playerSelection === "rock" && computerSelection === "paper") {
-    return "Paper wraps rock, computer wins";
-  }
-  if (playerSelection === "paper" && computerSelection === "scissors") {
-    return "Scissors cut paper, computer wins!";
-  }
-  if (playerSelection === "scissors" && computerSelection === "rock") {
-    return "Can't cut a rock with scissors, computer wins!";
-  }
-  if (computerSelection === "rock" && playerSelection === "paper") {
-    return "Paper wraps rock, player wins!";
-  }
-  if (computerSelection === "paper" && playerSelection === "scissors") {
-    return "Paper wraps rock, player wins";
-  }
-  if (computerSelection === "scissors" && playerSelection === "rock") {
-    return "Can't cut a rock with scissors, player wins!";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "rock")
+  ) {
+    return "Computer wins!";
+  } else {
+    return "Player wins!";
   }
 }
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
