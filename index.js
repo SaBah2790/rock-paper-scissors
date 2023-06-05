@@ -14,11 +14,9 @@ function playGame(playerSelection, computerSelection) {
     playerSelection.slice(1).toLowerCase();
 
   return (
-    playersPick +
+    `You choose ${playersPick}` +
     " " +
-    computerSelection +
-    " " +
-    `Rock beats ${computerSelection}`
+    `The computer chose ${computerSelection}`
   );
 }
 const playerSelection = "paper";
@@ -27,3 +25,26 @@ console.log(playGame(playerSelection, computerSelection));
 
 //set-up the result with winning and losing combinations
 //declare winner
+function game() {
+  if (playerSelection === computerSelection) {
+    return "It's a tie! Try again!";
+  }
+  if (playerSelection === "rock" && computerSelection === "paper") {
+    return "Paper wraps rock, computer wins";
+  }
+  if (playerSelection === "paper" && computerSelection === "scissors") {
+    return "Scissors cut paper, computer wins!";
+  }
+  if (playerSelection === "scissors" && computerSelection === "rock") {
+    return "Can't cut a rock with scissors, computer wins!";
+  }
+  if (computerSelection === "rock" && playerSelection === "paper") {
+    return "Paper wraps rock, player wins!";
+  }
+  if (computerSelection === "paper" && playerSelection === "scissors") {
+    return "Paper wraps rock, player wins";
+  }
+  if (computerSelection === "scissors" && playerSelection === "rock") {
+    return "Can't cut a rock with scissors, player wins!";
+  }
+}
