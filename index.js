@@ -38,3 +38,7 @@ function game(playerSelection, computerSelection) {
   }
 }
 console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
