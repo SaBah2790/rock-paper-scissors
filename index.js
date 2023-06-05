@@ -28,13 +28,13 @@ function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie! Try again!";
   } else if (
-    (playerSelection === "rock" && computerSelection === "paper") ||
-    (playerSelection === "paper" && computerSelection === "scissors") ||
-    (playerSelection === "scissors" && computerSelection === "rock")
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    return "Computer wins!";
-  } else {
     return "Player wins!";
+  } else {
+    return "Computer wins!";
   }
 }
 console.log(playGame());
