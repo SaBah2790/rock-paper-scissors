@@ -8,9 +8,7 @@ function getComputerChoice() {
 //pick an option from the three and play against the computer
 
 function playGame() {
-  let playerSelection = window.prompt(
-    "So what will it be? Rock, paper or scissors?"
-  );
+  let playerSelection = prompt("So what will it be? Rock, paper or scissors?");
   let computerSelection = getComputerChoice();
   let playersPick =
     playerSelection.charAt(0).toUpperCase() +
@@ -39,8 +37,4 @@ function game(playerSelection, computerSelection) {
     return "Player wins!";
   }
 }
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
 console.log(playGame());
