@@ -27,11 +27,11 @@ function playGame() {
 function game(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie! Try again!";
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    return "Player wins!";
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    return "Player wins!";
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
     return "Player wins!";
   } else {
     return "Computer wins!";
