@@ -18,8 +18,8 @@ function playGame() {
   let computerPick =
     computerSelection.charAt(0).toUpperCase() +
     computerSelection.slice(1).toLowerCase();
-  console.log("The player chose:", playersPick);
-  console.log("The computer chose:", computerPick);
+  console.log("The player has chosen:", playersPick);
+  console.log("The computer has chosen:", computerPick);
 
   return game(playersPick, computerPick);
 }
